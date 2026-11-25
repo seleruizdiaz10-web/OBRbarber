@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbería - Gestión Moderna</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+            <h2 id="auth-title" class="titulo-form">Iniciar Sesión</h2>
+            <form id="auth-form">
+                <input type="text" id="auth-user" placeholder="Usuario" required>
+                <input type="password" id="auth-pass" placeholder="Contraseña" required>
+                <button type="submit" id="btn-auth">Ingresar</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modal-edit" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 class="titulo-form">Actualizar Turno</h2>
+            <form id="edit-form">
+                <label>Cliente</label>
+                <input type="text" id="edit-cliente" required>
+                <label>Fecha</label>
+                <input type="date" id="edit-fecha" required>
+                <label>Hora (10:00 - 21:00)</label>
+                <input type="time" id="edit-hora" min="10:00" max="21:00" required>
+                <label>Barbero</label>
+                <select id="edit-barbero">
+                    <option value="Barbero 1">Barbero 1</option>
+                    <option value="Barbero 2">Barbero 2</option>
+                </select>
+                <button type="submit" class="btn-guardar">Guardar Cambios</button>
+                <button type="button" id="btn-cancel-edit" style="background: none; color: #999; border: none; width: 100%; margin-top: 10px; cursor: pointer;">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="container" id="main-content" style="display: none;">
+        <div class="formulario">
+            <button id="toggle-form" class="btn-toggle">+ Nuevo Turno</button>
+            
+            <div id="container-form-desplegable" class="form-hidden">
+                <form id="turno-form">
+                    <h2 class="titulo-form">Agendar Cita</h2>
+                    <label>Cliente</label>
+                    <input type="text" id="cliente" placeholder="Nombre completo" required>
+                    <label>Fecha</label>
+                    <input type="date" id="fecha" required>
+                    <label>Hora (10:00 - 21:00)</label>
+                    <input type="time" id="hora" min="10:00" max="21:00" required>
+                    <label>Barbero</label>
+                    <select id="barbero">
+                        <option value="Joakoobr">Joakoobr</option>
+                        <option value="Nicokdd">Nicokdd</option>
+                        <option value="Cuervin">Cuervin</option>
+                        <option value="Brunillo">Brunillo</option>
+                    </select>
+                    <button id="btn-save" class="btn-guardar">Confirmar Reserva</button>
+                </form>
+            </div>
+            <button type="button" id="btn-logout" class="btn-logout">Cerrar Sesión</button>
+        </div>
+        
+        <div class="listatareas">
+            <div id="turnos-container"></div>
+        </div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
